@@ -1,0 +1,47 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    &.clientes {
+        th {
+            text-align: left;
+        }
+        td:nth-child(3) {
+            text-align: right;
+        }
+    }
+
+    &.facturas {
+        th:nth-child(1) {
+            text-align: left;
+        }
+
+        th:nth-child(3),
+        td:nth-child(3) {
+            text-align: right;
+        }
+
+        td:nth-child(2) {
+            text-align: center;
+        }
+    }
+
+    th,
+    td {
+        padding: 1em;
+    }
+
+    tr:nth-child(odd) td {
+        background-color: $color-font-ultra-light;
+    }
+
+    tr:hover td {
+        background-color: $main-color-lighter;
+    }
+
+}
+
+.sin-resultados {
+    text-align: center;
+    margin: 2em;
+}

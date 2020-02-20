@@ -1,0 +1,14 @@
+.breadcrumb {
+    font-size: 1.5em;
+
+    span {
+        cursor: pointer;
+        color: $color-font-lighter;
+    }
+
+    span.activo {
+        cursor: initial;
+        color: white;
+    }
+    
+}

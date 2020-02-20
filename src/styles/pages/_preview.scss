@@ -1,0 +1,139 @@
+.pagina {
+    width: 210mm;
+    min-width: 210mm;
+    height: 297mm;
+    background-color: white;
+    box-shadow: 4px 4px 8px $color-font-lighter, 
+               -4px -4px 8px $color-font-lighter,
+               4px -4px 8px $color-font-lighter,
+               -4px 4px 8px $color-font-lighter;
+    margin: 2em auto 2em;
+    padding: 1.5cm;
+    font-size: 12pt;
+
+    .cabecera {
+        @include flex-row(space-between, center);
+        font-size: 14pt;
+
+        img {
+            height: 2cm;
+        }
+
+        h3 {
+            font-size: 18pt;
+            margin-bottom: 4pt;
+        }
+
+        p {
+            margin-bottom: 4pt;
+        }
+    }
+
+    .tipo-documento {
+        font-size: 20pt;
+        text-align: center;
+        margin-bottom: 8pt;
+        color: #eb642a;
+    }
+
+    .cliente {
+        width: 100%;
+        border-top: 1pt solid $color-font;
+        border-right: 1pt solid $color-font;
+        border-left: 1pt solid $color-font;
+        @include flex-column(flex-start,flex-start);
+        padding: 8pt;
+
+        p {
+            margin-bottom: 4pt;
+        }
+    }
+
+    .datos {
+        width: 100%;
+        border-top: 1pt solid $color-font;
+        border-right: 1pt solid $color-font;
+        border-left: 1pt solid $color-font;
+        @include flex-row(flex-start, flex-start);
+
+        .numero {
+            padding: 8pt;
+            width: 25%;
+            border-right: 1pt solid $color-font;
+        }
+
+        .fecha {
+            padding: 8pt;
+            width: 75%;
+        }
+    }
+
+    .cuerpo {
+        width: 100%;
+        border-top: 1pt solid $color-font;
+        border-right: 1pt solid $color-font;
+        border-left: 1pt solid $color-font;
+        padding: 8pt;
+        min-height: 12cm;
+
+        pre {
+            font-family: $main-font;
+            line-height: 20pt;
+            text-align: left;
+        }
+
+    }
+
+    .pie {
+        border: 1pt solid $color-font;
+        @include flex-row(flex-start, stretch);
+
+        .observaciones {
+            width: 50%;
+            border-right: 1pt solid $color-font;
+            padding: 8pt;
+        }
+
+        .calculo {
+            width: 50%;
+
+            p {
+                @include flex-row(space-between, flex-end);
+                padding: 8pt;
+                border-bottom: 1pt solid $color-font;
+            }
+
+            p:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+
+    html,
+    body {
+        overflow: hidden;
+    }
+
+    .pagina {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: auto;
+        height: 100%;
+        box-shadow: initial;
+    }
+
+    .container {
+        display: none;
+    }
+
+}

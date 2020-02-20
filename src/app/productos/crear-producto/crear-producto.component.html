@@ -1,0 +1,55 @@
+<div class="container">
+    <app-breadcrumb></app-breadcrumb>
+    <div class="card w-60">
+        <div class="fila">
+            <div class="col-100 titulo">
+                <h1>Nuevo producto</h1>
+            </div>
+        </div>
+        <hr>
+        <form [formGroup]="formProducto" (ngSubmit)="sendProducto()">
+            <div class="fila">
+                <div class="col-100 pila">
+                    <label for="nombre">
+                        NOMBRE
+                        <span class="validate valid"
+                             *ngIf="formProducto.controls.nombre.valid">
+                            <img src="assets/check-circle.svg">
+                        </span>
+                        <span class="validate invalid"
+                            *ngIf="validacion && formProducto.controls.nombre.invalid">
+                            <img src="assets/alert-triangle.svg">
+                            El nombre es obligatorio
+                        </span>
+                    </label>
+                    <input class="inicio" type="text" id="nombre" formControlName="nombre" required #nombre>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col-100 pila">
+                    <label for="descripcion">
+                        Descripción
+                    </label>
+                    <input class="inicio" type="text" id="descripcion" formControlName="descripcion">
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col-33 pila">
+                    <label for="precio">Precio</label>
+                    <input type="text" id="precio" formControlName="precio">
+                </div>
+                <div class="col-66 pila">
+                    <label for="sku">sku</label>
+                    <input type="text" id="sku" formControlName="sku">
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col-100 botones">
+                    <button class="outline" routerLink="/listado-productos" type="button">Cancelar</button>
+                    <button class="m-l-small" *ngIf="formProducto.invalid" type="button" (click)="showValidacion()">Añadir</button>
+                    <button class="m-l-small" *ngIf="formProducto.valid" type="submit">Añadir</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

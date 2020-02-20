@@ -1,0 +1,84 @@
+nav {
+    background: $main-background;
+    padding: 1em;
+    height: 170px;
+
+    header {
+        @include flex-row(space-between, center);
+
+        .burger {
+            cursor: pointer;
+            z-index: 10;
+
+            .bar {
+                height: 3px;
+                width: 35px;
+                margin: 8px auto;
+                background-color: white;
+                transition: 400ms all ease-in-out;
+            }
+
+        }
+
+    }
+
+    .side-menu {
+        height: 100vh;
+        width: 360px;
+        position: absolute;
+        top: 0;
+        left: -360px;
+        z-index: 5;
+        background-color: #1e1e2d;
+        transition: 600ms all ease-in-out;
+        padding-top: 120px;
+
+        .item {
+            color: $color-font-lighter;
+            font-size: 1.5em;
+            padding: 0.5em 1em;
+            cursor: pointer;
+
+            &:hover {
+                color: white;
+            }
+
+            &:last-child {
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                font-size: 1em;
+                cursor: initial;
+            }
+
+            &:last-child:hover {
+                color: $color-font-lighter;
+            }
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: $color-font-lighter;
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    &.open {
+        .bar.up {
+            transform: translateY(11px) rotateZ(45deg);
+        }
+        .bar.middle {
+            width: 0;
+        }
+        .bar.down {
+            transform: translateY(-11px) rotateZ(-45deg);
+        }
+
+        .side-menu {
+            left: 0;
+        }
+
+    }
+}

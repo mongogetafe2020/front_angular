@@ -1,0 +1,31 @@
+<nav #nav>
+    <header>
+        <div class="burger" (click)="toggleMenu()">
+            <div class="bar up"></div>
+            <div class="bar middle"></div>
+            <div class="bar down"></div>
+        </div>
+        <div class="mensaje" 
+             *ngIf="texto?.length > 0 && showMensaje"
+             [ngClass]="{
+                            'success': tipoMensaje === 'exitoTotal',
+                            'warning': tipoMensaje === 'warning',
+                            'danger': tipoMensaje === 'error'
+                        }">
+            {{texto}}
+        </div>
+    </header>
+    <div class="side-menu">
+        <div class="item" routerLink="/listado-productos" (click)="toggleMenu()">
+            Productos
+        </div>
+        <hr>
+        <div class="item">
+            &copy; 2020 Pedro Jiménez Castela
+        </div>
+    </div>
+</nav>
+
+
+            
+ 

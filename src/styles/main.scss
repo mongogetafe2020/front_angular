@@ -1,0 +1,45 @@
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'components/badges';
+@import 'components/breadcrumb';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/modals';
+@import 'components/nav';
+@import 'components/spinners';
+@import 'components/tables';
+
+@import 'layout/layout';
+
+@import 'pages/home';
+@import 'pages/preview';
+
+body {
+    font-family: $main-font;
+    color: $color-font;
+    background-color: rgb(236, 236, 236);
+}
+
+h1 {
+    font-family: $title-font;
+}
+
+a {
+    color: $main-color;
+
+    &:hover {
+        color: $main-color-darker;
+    }
+}
+
+.m-l-small {
+    margin-left: 0.5em;
+}
+
+.m-r-small {
+    margin-right: 0.5em;
+}
